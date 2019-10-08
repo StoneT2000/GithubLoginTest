@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/StoneT2000/GithubLoginTest#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "config": "^3.2.3",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.7.3",
     "validation": "0.0.1"

@@ -1,0 +1,17 @@
+<h1>Test GithubLogin</h1>
+
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+
+<script>
+  //$.get("https://github.com/login/oauth/authorize", {client_id: "4ac3609a363801ddd64f", login: "StoneT2000", })
+  //6efe458dfe2230acceea
+  // to to "https://github.com/login?client_id=4ac3609a363801ddd64f"&return_to=https://www.google.com
+//https://github.com/login?client_id=6efe458dfe2230acceea&return_to=%2Flogin%2Foauth%2Fauthorize%3Fclient_id%3D6efe458dfe2230acceea%26redirect_uri%3Dhttps%253A%252F%252Fleetcode.com%252Faccounts%252Fgithub%252Flogin%252Fcallback%252F%26response_type%3Dcode%26scope%3Duser%253Aemail%26state%3DlTEwXd37k687
+const client_id = '5b51d07e53faaf6cc5d2'
+const redirect_uri = 'https://localhost:3000/auth.html';
+window.location = `https://github.com/login?client_id=${client_id}&return_to=/login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}`;
+//file:///Users/stone.tao/Desktop/Coding/Node/GithubIntegrators/index.html
+</script>
