@@ -5,6 +5,9 @@ var cors = require('cors');
 // routes
 const auth = require('./routes/api/auth');
 
+// payload
+const payload = require('./payload');
+
 const app = express();
 
 // Connect Database
@@ -20,6 +23,8 @@ app.get('/', (req, res) => res.send('Hello world!'));
 
 // use Routes
 app.use('/api/auth', auth);
+
+app.use('/payload', payload);
 
 const port = process.env.PORT || 8080;
 
