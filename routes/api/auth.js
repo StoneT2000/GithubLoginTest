@@ -4,7 +4,7 @@ const axios = require('axios');
 
 router.get('/hey', (req, res) => res.send('Hey!'));
 
-const client_secret: "SECRET";
+const client_secret = process.env.client_secrete;
 
 router.get('/code/:code', (req, res) => {
   let code = req.params.code;
