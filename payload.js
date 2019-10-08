@@ -3,19 +3,21 @@ const router = express.Router();
 const axios = require('axios');
 
 router.post("/", (req, res) => {
-  console.log("POST TO PAYLOAD HEADERS: ",req.headers);
+  // console.log("POST TO PAYLOAD HEADERS: ",req.headers);
+
   res.send("Accepted");
   let event = req.headers['x-github-event'];
   if (event == 'push') {
-    console.log("Hooked onto latest commit");
-    console.log(req.data);
+    pushEvent(req);
   }
-
-
   else if (event == 'pull_request') {
     pullRequestEvent(req);
   }
+  else if (event == 'deployment') {
+    deploymentEvent(req);
+  }
 });
+
 /**
  * Triggered when a pull request is assigned, unassigned, labeled, unlabeled, opened, edited,
  * closed, reopened, synchronize, ready_for_review, locked, unlocked or
@@ -23,8 +25,15 @@ router.post("/", (req, res) => {
  * @param req - the request object
  */
 function pullRequestEvent(req) {
-  console.log(req.data);
-  console.log("ACTION: " + req.data.action);
+  console.log("Initator of Pull Request: " + req.data.pull_request.user.login);
+}
+
+function pushEvent(req) {
+  console.log("Who Pushed: " + req.data.pusher.name);
+}
+
+function deploymentEvent(req) {
+  console.log("Deployment created at: " + req.data.deployment.created_at);
 }
 
 module.exports = router;
