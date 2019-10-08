@@ -1,1 +1,1 @@
-web: npm start --prefix ghapp
+web: node app.js
