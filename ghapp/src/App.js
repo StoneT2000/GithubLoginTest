@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
-import Main from './components/Main';
-import Auth from './components/Auth';
+import Main from './components/Main/Main';
+import Auth from './components/Auth/Auth';
 
 class App extends Component {
   render() {

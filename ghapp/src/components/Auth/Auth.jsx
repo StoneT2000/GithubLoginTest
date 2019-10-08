@@ -2,7 +2,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import queryString from 'query-string'
-
+import './style.css';
 class Auth extends Component {
   constructor(props) {
     super();
@@ -27,10 +27,12 @@ class Auth extends Component {
 
       // Show the error if there is one, else show the data received (should be the access token, scope, and )
       if (resObj.error) {
-        this.setState({response: "Error: " + resObj.error + "; Description: " + resObj.error_description + "; " + resObj.error_uri});
+        this.setState({response: <div className="AuthResponse"><p>Error: {resObj.error}</p><p>Description: {resObj.error_description}</p><p>Error URI: {resObj.error_uri}</p></div>});
       }
       else {
-        this.setState({response: res.data});
+        // github gives us an access_token, allowing us to pretend like we are the user and do things!
+        // This is also confirmation that their github login worked
+        this.setState({response: <p>Access Token: {resObj.access_token}</p>});
       }
 
     })
@@ -48,8 +50,9 @@ class Auth extends Component {
       <div className="Auth">
 
 
-        <h2>Authenticating with code: {this.state.values.code}</h2>
-        <p>Response: {this.state.response}</p>
+        <h1>Authenticating with code: {this.state.values.code}</h1>
+        <h3>Response</h3>
+        {this.state.response}
       </div>
     )
   }
