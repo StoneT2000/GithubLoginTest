@@ -32,6 +32,7 @@ function pullRequestEvent(req) {
  *
  */
 function pushEvent(req) {
+  console.log(req);
   console.log("Who Pushed: " + req.pusher.name);
 }
 
