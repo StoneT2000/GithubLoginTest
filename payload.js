@@ -25,7 +25,7 @@ router.post("/", (req, res) => {
  * @param req - the request object
  */
 function pullRequestEvent(req) {
-  console.log("Initator of Pull Request: " + req.pull_request.user.login);
+  console.log("Initator of Pull Request: " + req.body.pull_request.user.login);
 }
 /**
  *
@@ -33,11 +33,11 @@ function pullRequestEvent(req) {
  */
 function pushEvent(req) {
   console.log(req);
-  console.log("Who Pushed: " + req.pusher.name);
+  console.log("Who Pushed: " + req.body.pusher.name);
 }
 
 function deploymentEvent(req) {
-  console.log("Deployment created at: " + req.deployment.created_at);
+  console.log("Deployment created at: " + req.data.body.deployment.created_at);
 }
 
 module.exports = router;
