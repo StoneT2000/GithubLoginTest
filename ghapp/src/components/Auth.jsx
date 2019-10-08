@@ -15,15 +15,22 @@ class Auth extends Component {
   authenticate(code) {
     axios.get("http://localhost:8080/api/auth/code/" + code)
     .then(res =>{
-      console.log(res);
+
+      // Process the response from our API
       let resParams = res.data.split("&");
       let resObj = {};
       for (let i = 0; i < resParams.length; i++) {
         let args = resParams[i].split("=");
         resObj[args[0]] = args[1];
       }
+      console.log(resObj);
+
+      // Show the error if there is one, else show the data received (should be the access token, scope, and )
       if (resObj.error) {
         this.setState({response: "Error: " + resObj.error + "; Description: " + resObj.error_description + "; " + resObj.error_uri});
+      }
+      else {
+        this.setState({response: res.data});
       }
 
     })
