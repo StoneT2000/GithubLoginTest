@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './style.css';
 class Main extends Component {
   signIn() {
     const client_id = '5b51d07e53faaf6cc5d2'
@@ -11,12 +11,11 @@ class Main extends Component {
 
     return (
 
-      <div>
-      <script>
-
-      </script>
+      <div className="Main">
+        <div className="card">
         <h2>Hello</h2>
         <button onClick={this.signIn}>Sign In</button>
+        </div>
       </div>
     )
   }

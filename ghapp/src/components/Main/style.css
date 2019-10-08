@@ -1,0 +1,35 @@
+.Main {
+
+}
+.Main button {
+  border:none;
+  color:rgb(51,56,68);
+  background-color: #fefefe;
+  font-size:20px;
+  padding:20px;
+  padding-top: 5px;
+  padding-bottom:5px;
+  cursor:pointer;
+}
+.Main .card {
+
+}
+.card {
+  width:300px;
+  max-height:80vh;
+  margin:25px;
+  box-shadow: 0px 4px 24px rgba(11,16,44,0.15);
+  padding:25px;
+  background-color: rgba(51,56,68);
+  color:#fefefe;
+  position: relative;
+}
+.card button {
+  transition: transform 0.2s;
+  transform-origin: 50% 50%;
+}
+
+.card button:hover {
+  transform: scale(1.2);
+
+}
