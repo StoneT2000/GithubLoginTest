@@ -13,7 +13,7 @@ class Auth extends Component {
   }
   //authenticate from server!
   authenticate(code) {
-    axios.get("http://localhost:8080/api/auth/code/" + code)
+    axios.get("https://github-webhooks-stone.herokuapp.com/api/auth/code/" + code)
     .then(res =>{
 
       // Process the response from our API
