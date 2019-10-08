@@ -27,7 +27,10 @@ router.post("/", (req, res) => {
 function pullRequestEvent(req) {
   console.log("Initator of Pull Request: " + req.pull_request.user.login);
 }
-
+/**
+ *
+ *
+ */
 function pushEvent(req) {
   console.log("Who Pushed: " + req.pusher.name);
 }
