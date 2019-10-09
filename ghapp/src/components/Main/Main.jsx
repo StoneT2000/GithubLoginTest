@@ -13,7 +13,7 @@ class Main extends Component {
 
       <div className="Main">
         <div className="card">
-        <h2>Hello</h2>
+        <h2>GitHub Sign In</h2>
         <button onClick={this.signIn}>Sign In</button>
         </div>
       </div>
